@@ -1,0 +1,86 @@
+export const lesson = {
+  number: "8.5.3",
+  title: "LeSS and Nexus: Lighter Ways to Scale Scrum",
+  screens: [
+    {
+      id: "hook", tab: "The group report", type: "reveal", image: "report-mismatch",
+      heading: "Picture four classmates writing one group report.",
+      open: "Each writes their own chapter, and each chapter reads beautifully on its own. Then the chapters get stitched together, and nothing lines up: the second chapter repeats the first, the third uses different terms, and the conclusion answers a question nobody asked.",
+      cta: "See the scaling problem",
+      reveal: { title: "Scaling Scrum has the same problem.", image: "report-mismatch", text: "Several teams can each build something that works in isolation, and the pieces still do not fit together. Not every multi-team product needs SAFe’s full apparatus, though. Two lighter frameworks scale Scrum with far less overhead: LeSS, which adds almost nothing, and Nexus, which adds one thing." },
+    },
+    {
+      id: "less", tab: "LeSS", type: "explore", image: "less",
+      heading: "Large-Scale Scrum takes the most minimalist stance: scale Scrum up while adding as little as possible, so plain Scrum stays recognizable.",
+      open: "Click each to explore.",
+      items: [
+        { title: "One Product Owner, One Product Backlog", text: "One for all the teams, not a backlog per team. The teams are genuinely building one product, not loosely related sub-products." },
+        { title: "One Shared Sprint, One Shared Product Goal", text: "Every team is a real cross-functional Scrum team, working in the same Sprint toward the same Product Goal." },
+        { title: "Scaled Events, Not Multiplied Events", text: "A joint Sprint Planning that all teams participate in, a joint Sprint Review, and an overall Retrospective across teams in addition to the per-team ones." },
+        { title: "Minimal Added Process", text: "LeSS deliberately minimizes additional roles, artifacts, and process, on the principle that more process is a cost to be justified, not a default." },
+        { title: "Typical Size", text: "Typically suits up to about eight teams, with a “LeSS Huge” variant for more." },
+      ],
+      after: { label: "Exam signal", text: "When a scenario describes an organization that wants to coordinate several teams on one product while keeping their agility lightweight and Scrum pure, LeSS is the answer being pointed at." },
+    },
+    {
+      id: "nexus", tab: "Nexus", type: "reveal", image: "nexus",
+      heading: "Nexus was created by the author of Scrum, and it is organized around one problem above all others: integration.",
+      open: "",
+      cta: "Reveal the integration team",
+      reveal: { title: "The Nexus Integration Team", image: "nexus", text: "Nexus scales Scrum for a specific range: three to nine Scrum teams working on a single product from one Product Backlog with one Product Owner. Its defining addition is the Nexus Integration Team, accountable for ensuring that the work of all the teams comes together into a single, integrated, usable Increment every Sprint. Integration is the thing that quietly kills multi-team Scrum — each team produces something that works in isolation, but the pieces do not fit together — and Nexus exists to make that failure mode someone’s explicit job." },
+      quiz: {
+        question: "Scenario: Five Scrum teams build one product from a single Product Backlog. Each team’s work passes its own tests every Sprint, but when the pieces are combined, they repeatedly fail to fit together and no single usable Increment exists at Sprint’s end. Which Nexus element is designed specifically to prevent this failure?",
+        answers: ["A separate Product Backlog for each team, so their work cannot collide", "A Nexus Sprint Review, since showing the work is what makes it integrate", "The Nexus Integration Team, accountable for a single, integrated, usable Increment every Sprint", "A portfolio layer above the teams that approves each team’s output"],
+        correct: 2,
+        correctFeedback: "Correct! Integration is what Nexus exists for. The Nexus Integration Team makes “the pieces fit together” someone’s explicit job, so it stops being everyone’s assumption and nobody’s responsibility.",
+        incorrectFeedback: "Reconsider — separate backlogs would split the product apart, a review shows the work but does not make it integrate, and a portfolio layer belongs to SAFe. The Nexus answer is the Nexus Integration Team.",
+      },
+    },
+    {
+      id: "events", tab: "Nexus events", type: "flip", image: "nexus",
+      heading: "To support integration, Nexus adds a thin layer of Nexus-level events that mirror Scrum’s.",
+      open: "Click each card to flip it.",
+      items: [
+        { title: "Nexus Sprint Planning", text: "Planning that coordinates the work of all the teams for the Sprint." },
+        { title: "Nexus Daily Scrum", text: "A Daily Scrum focused on cross-team dependencies and integration issues." },
+        { title: "Nexus Sprint Review", text: "A review of the combined, integrated Increment across the teams." },
+        { title: "Nexus Sprint Retrospective", text: "A retrospective at the Nexus level, looking at how the teams work together." },
+      ],
+    },
+    {
+      id: "compare", tab: "Tell them apart", type: "tabs", image: "frameworks",
+      heading: "The way to tell the three scaling frameworks apart on the exam is by what each one adds.",
+      open: "Click each tab.",
+      items: [
+        { title: "LeSS", subtitle: "Adds almost nothing", text: "Keeps Scrum minimal: one Product Owner, one backlog, scaled events, minimal added roles and process." },
+        { title: "Nexus", subtitle: "Adds one thing", text: "The Nexus Integration Team, because integration across three to nine teams is its whole focus." },
+        { title: "SAFe", subtitle: "Adds the most", text: "Program and portfolio layers, ARTs, and PI Planning, for the largest, most complex enterprises." },
+      ],
+      rule: "More teams and more enterprise complexity argue for a heavier framework. Fewer teams and a desire to stay Scrum-pure argue for the lighter ones.",
+      quiz: {
+        question: "Scenario: An organization has about six Scrum teams working on one product. Leadership wants to coordinate them and keep agility lightweight, but their main recurring problem is that the teams’ pieces do not come together into one working Increment. Which approach fits best?",
+        answers: ["Nexus, because its defining addition is a team accountable for integration across three to nine teams", "SAFe, because more teams always call for program and portfolio layers", "Keeping each team fully independent with its own backlog and no coordination", "LeSS Huge, because integration problems require the largest variant"],
+        correct: 0,
+        correctFeedback: "Correct! Six teams sits inside Nexus’s three-to-nine range, and integration is the stated problem. That points straight at the Nexus Integration Team, without the heavy layers SAFe would add.",
+        incorrectFeedback: "Reconsider — six teams and a wish to stay lightweight argue against SAFe’s full apparatus, independent backlogs would make integration worse, and LeSS Huge is for far more teams than this. The integration focus points to Nexus.",
+      },
+    },
+    {
+      id: "synthesis", tab: "Synthesis", type: "reveal", image: "frameworks",
+      heading: "Back to that group report one more time.",
+      open: "Nobody needed a publishing house. They needed one outline, and one person whose job was making the chapters fit.",
+      cta: "Review the takeaways",
+      reveal: {
+        title: "LeSS and Nexus: Lighter Ways to Scale Scrum", image: "frameworks",
+        text: "Both lighter frameworks scale Scrum with far less overhead than SAFe. LeSS keeps Scrum recognizable: one Product Owner, one backlog, one shared Sprint and Product Goal, scaled events, and as little added as possible, typically for up to about eight teams. Nexus scales for three to nine teams around one problem, integration, through the Nexus Integration Team and a thin layer of Nexus-level events. SAFe adds the most, for the largest enterprises.",
+        bullets: [
+          "LeSS: one Product Owner, one Product Backlog, one shared Sprint and Product Goal; joint Sprint Planning and Review plus an overall Retrospective; minimal added process; typically up to about eight teams (LeSS Huge for more)",
+          "Nexus: created by the author of Scrum; three to nine teams, one backlog, one Product Owner; defined by the Nexus Integration Team, accountable for one integrated, usable Increment every Sprint",
+          "Nexus events mirror Scrum’s: Nexus Sprint Planning, Nexus Daily Scrum (cross-team dependencies and integration), Nexus Sprint Review, Nexus Sprint Retrospective",
+          "What each adds: LeSS almost nothing, Nexus one thing (the Nexus Integration Team), SAFe the most (program and portfolio layers, ARTs, PI Planning)",
+          "Rule of thumb: more teams and enterprise complexity argue for heavier frameworks; fewer teams and a desire to stay Scrum-pure argue for lighter ones",
+        ],
+      },
+    },
+  ],
+};
