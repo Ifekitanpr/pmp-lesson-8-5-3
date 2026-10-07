@@ -17,15 +17,16 @@ function DetailModal({ content, onClose, onRead }) {
   }, [onClose]);
   return createPortal(
     <div className="modal-backdrop" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
-      <section className="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <section className="focus-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title">
         <button className="modal-close" type="button" onClick={onClose} aria-label="Close"><X /></button>
-        {content.image && <img src={imageFor(content.image)} alt="" />}
-        <div>
-          <h2 id="detail-title">{content.title}</h2>
+        {content.image && <img className="modal-illustration" src={imageFor(content.image)} alt="" />}
+        <p className="modal-label">EXPLORE</p>
+        <h3 id="detail-title">{content.title}</h3>
+        <div className="modal-copy">
           {(Array.isArray(content.text) ? content.text : [content.text]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           {content.bullets && <ul>{content.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
-          <button className="primary-button unlocked" type="button" onClick={() => { onRead(); onClose(); }}>Continue <ArrowRight /></button>
         </div>
+        <button className="modal-action" type="button" onClick={() => { onRead(); onClose(); }}>Mark as read <Check /></button>
       </section>
     </div>, document.body,
   );
@@ -38,16 +39,16 @@ function KnowledgeCheck({ quiz, review, onClose, onComplete }) {
     <div className="modal-backdrop knowledge-backdrop">
       <section className="knowledge-modal" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
         <button className="modal-close" type="button" onClick={onClose} aria-label="Close"><X /></button>
-        <p className="quiz-label"><Target /> KNOWLEDGE CHECK</p>
-        <h2 id="quiz-title">{quiz.question}</h2>
+        <p className="quiz-label"><Target /> MICRO KNOWLEDGE CHECK</p>
+        <h3 id="quiz-title">{quiz.question}</h3>
         <div className="answers">{quiz.answers.map((answer, index) => (
           <button type="button" key={answer} disabled={review} className={picked === index ? (correct ? "correct" : "wrong") : ""} onClick={() => setPicked(index)}>
             <span>{String.fromCharCode(65 + index)}</span>{answer}
           </button>
         ))}</div>
         {picked !== null && <div className={`feedback ${correct ? "good" : "bad"}`}><p>{correct ? quiz.correctFeedback : quiz.incorrectFeedback}</p>{!correct && <small>Choose another answer to try again.</small>}</div>}
-        {correct && !review && <button className="primary-button unlocked" type="button" onClick={() => { onComplete(); onClose(); }}>Finish check <ArrowRight /></button>}
-        {review && <button className="primary-button unlocked" type="button" onClick={onClose}>Done <Check /></button>}
+        {correct && !review && <button className="modal-action" type="button" onClick={() => { onComplete(); onClose(); }}>Finish check <ArrowRight /></button>}
+        {review && <button className="modal-action" type="button" onClick={onClose}>Done <Check /></button>}
       </section>
     </div>, document.body,
   );
@@ -104,7 +105,7 @@ function QuizActions({ ready, complete, onQuiz }) {
 }
 
 function CompletionModal({ onClose }) {
-  return createPortal(<div className="modal-backdrop"><section className="completion-modal" role="dialog" aria-modal="true"><span className="completion-check"><Check /></span><p>LESSON COMPLETE</p><h2>Lesson {lesson.number}</h2><span>{lesson.title}</span><button className="primary-button unlocked" type="button" onClick={onClose}>Done <Check /></button></section></div>, document.body);
+  return createPortal(<div className="modal-backdrop"><section className="completion-modal" role="dialog" aria-modal="true" aria-labelledby="complete-title"><div className="completion-icon"><Check /></div><p>LESSON COMPLETE</p><h3 id="complete-title">Lesson {lesson.number}</h3><span>{lesson.title}</span><button className="modal-action" type="button" onClick={onClose}>Done <Check /></button></section></div>, document.body);
 }
 
 function App() {
