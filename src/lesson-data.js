@@ -30,8 +30,8 @@ export const lesson = {
       reveal: { title: "The Nexus Integration Team", image: "nexus", text: "Nexus scales Scrum for a specific range: three to nine Scrum teams working on a single product from one Product Backlog with one Product Owner. Its defining addition is the Nexus Integration Team, accountable for ensuring that the work of all the teams comes together into a single, integrated, usable Increment every Sprint. Integration is the thing that quietly kills multi-team Scrum — each team produces something that works in isolation, but the pieces do not fit together — and Nexus exists to make that failure mode someone’s explicit job." },
       quiz: {
         question: "Scenario: Five Scrum teams build one product from a single Product Backlog. Each team’s work passes its own tests every Sprint, but when the pieces are combined, they repeatedly fail to fit together and no single usable Increment exists at Sprint’s end. Which Nexus element is designed specifically to prevent this failure?",
-        answers: ["A separate Product Backlog for each team, so their work cannot collide", "A Nexus Sprint Review, since showing the work is what makes it integrate", "The Nexus Integration Team, accountable for a single, integrated, usable Increment every Sprint", "A portfolio layer above the teams that approves each team’s output"],
-        correct: 2,
+        answers: ["A separate Product Backlog for each team, so their work cannot collide","The Nexus Integration Team, accountable for one integrated usable Increment","A Nexus Sprint Review, since showing the work is what makes it integrate","A portfolio layer above the teams that approves each team’s output"],
+        correct: 1,
         correctFeedback: "Correct! Integration is what Nexus exists for. The Nexus Integration Team makes “the pieces fit together” someone’s explicit job, so it stops being everyone’s assumption and nobody’s responsibility.",
         incorrectFeedback: "Reconsider — separate backlogs would split the product apart, a review shows the work but does not make it integrate, and a portfolio layer belongs to SAFe. The Nexus answer is the Nexus Integration Team.",
       },
@@ -59,8 +59,8 @@ export const lesson = {
       rule: "More teams and more enterprise complexity argue for a heavier framework. Fewer teams and a desire to stay Scrum-pure argue for the lighter ones.",
       quiz: {
         question: "Scenario: An organization has about six Scrum teams working on one product. Leadership wants to coordinate them and keep agility lightweight, but their main recurring problem is that the teams’ pieces do not come together into one working Increment. Which approach fits best?",
-        answers: ["Nexus, because its defining addition is a team accountable for integration across three to nine teams", "SAFe, because more teams always call for program and portfolio layers", "Keeping each team fully independent with its own backlog and no coordination", "LeSS Huge, because integration problems require the largest variant"],
-        correct: 0,
+        answers: ["SAFe, because more teams always call for program and portfolio layers","Keeping each team fully independent with its own backlog and no coordination","LeSS Huge, because integration problems require the largest variant","Nexus — it fits three to nine teams and directly addresses integration"],
+        correct: 3,
         correctFeedback: "Correct! Six teams sits inside Nexus’s three-to-nine range, and integration is the stated problem. That points straight at the Nexus Integration Team, without the heavy layers SAFe would add.",
         incorrectFeedback: "Reconsider — six teams and a wish to stay lightweight argue against SAFe’s full apparatus, independent backlogs would make integration worse, and LeSS Huge is for far more teams than this. The integration focus points to Nexus.",
       },
